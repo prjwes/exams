@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Report Card Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="home-container">
+        <h1>Welcome</h1>
+        <div class="user-options">
+            <input type="text" id="newName" placeholder="New Name">
+            <input type="password" id="newPassword" placeholder="New Password">
+            <button onclick="changeUserDetails()">Change Details</button>
+            <button onclick="resetPassword()">Reset Password</button>
+            <button onclick="logout()">Logout</button>
+        </div>
+        <div class="containers">
+            <div class="container" onclick="window.location.href='add_learners.html'">
+                <h2>Add Learners</h2>
+            </div>
+            <div class="container" onclick="window.location.href='upload_marks.html'">
+                <h2>Upload Marks</h2>
+            </div>
+            <div class="container" onclick="window.location.href='records.html'">
+                <h2>Records</h2>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        if (!isLoggedIn()) window.location.href = 'index.html';
+    </script>
+</body>
+</html>
