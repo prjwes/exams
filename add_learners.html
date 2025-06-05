@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Learners - Report Card Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Add Learner</h1>
+        <form id="addLearnerForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <label for="adm">Admission Number:</label>
+            <input type="text" id="adm" name="adm" required>
+            <label for="grade">Grade:</label>
+            <select id="grade" name="grade" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+            <button type="submit">Add Learner</button>
+        </form>
+        <button onclick="window.location.href='home.html'">Back to Home</button>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        if (!isLoggedIn()) window.location.href = 'index.html';
+        document.getElementById('addLearnerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const learner = {
+                name: document.getElementById('name').value,
+                gender: document.getElementById('gender').value,
+                adm: document.getElementById('adm').value,
+                grade: document.getElementById('grade').value,
+                age: document.getElementById('age').value
+            };
+            if (addLearner(learner)) {
+                alert('Learner added successfully');
+                this.reset();
+            } else {
+                alert('Admission number already exists');
+            }
+        });
+    </script>
+</body>
+              </html> 
